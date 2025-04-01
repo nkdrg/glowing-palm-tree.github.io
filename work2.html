@@ -1,0 +1,133 @@
+    <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Юбилей Института зарубежной филологии и регионоведения</title>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+        <style>
+            * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+        .header {
+            background: url('УЛК.jpeg') no-repeat center/cover;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .header h1 {
+            font-size: 50px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            background: black;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .button:hover {
+            background: #e63939;
+        }
+        .section {
+            padding: 80px 20px;
+            background: white;
+            margin-top: -50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Юбилей Института зарубежной филологии и регионоведения</h1>
+            <h2>Приглашаем всех на празднование юбилея. Вас ждёт насыщенная программа, интересные лекции и встречи с коллегами.</h2>
+        </div>
+        <div class = "container">
+            
+            <h2>Дата</h2>
+            <p>8 апреля 2025 г.</p>
+            <h2>Место проведения</h2>
+            <p>ИЗФИР СВФУ г. Якутск, ул. Белинского 58, УЛК</p>
+            <p>Очень ждем и будем рады видеть вас на нашем юбилее!</p>
+        <div class="footer">
+            <input type="text" id="name" class="input" placeholder="ФИО"> 
+        </div>
+            
+        
+        <div class="button">
+            <button id="submit-btn" onclick="sendResponse()">Я приду</button>
+        </div>
+
+            <p id="message" class="message"></p>
+
+            <script>
+                function sendResponse() {
+                    const nameInput = document.getElementById("name");
+                    const submitBtn = document.getElementById("submit-btn");
+                    const message = document.getElementById("message");
+                    const name = document.getElementById("name").value.trim();
+
+                    if(name == "") {
+                        document.getElementById("message").innerText = "введите ваше ФИО";
+                        return;
+                    }
+                    const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfbxygLSuHhdsx0yM0f6OqlDVQX5VZhlxkQGIFZGfeyEYKyGA/formResponse";
+                    const FIELD_KEY = "entry.1819273019";
+
+                    const formData = new FormData();
+                    formData.append(FIELD_KEY, name);
+
+                    fetch(GOOGLE_FORM_URL, {
+                        method: "POST",
+                        body: formData,
+                        mode: "no-cors" 
+                    }).then(() => {
+                        document.getElementById("message").innerText = "Ждем вас на юбилее!";
+                        document.getElementById("name").value = ""; 
+                        nameInput.disabled = true;
+                        submitBtn.disabled = true;
+                    }).catch(() => {
+                        document.getElementById("message").innerText = "Ошибка при отправке. Попробуйте еще раз.";
+                    });
+                }
+            </script>
+        </div>
+
+            <div class="contact">
+                <p>Свяжитесь с нами по всем вопросам:</p>
+                <p>Деканат: 8 (4112) 49-68-81</p>
+                <p>Email: izfir-pk@s-vfu.ru</p>
+            </div>
+        </div>
+    </body>
+    </html>
