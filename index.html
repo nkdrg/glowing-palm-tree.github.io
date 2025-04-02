@@ -94,6 +94,63 @@
             border-color: #e63939;
             outline: none;
         }
+        .radio-group {
+            margin: 20px 0;
+        }
+        
+        .radio-option {
+            display: block;
+            margin: 15px 0;
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .radio-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            border-radius: 50%;
+            border: 2px solid #ddd;
+        }
+        
+        .radio-option:hover input ~ .checkmark {
+            background-color: #f5f5f5;
+        }
+        
+        .radio-option input:checked ~ .checkmark {
+            background-color: #e63939;
+            border-color: #e63939;
+        }
+        
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        
+        .radio-option input:checked ~ .checkmark:after {
+            display: block;
+        }
+        
+        .radio-option .checkmark:after {
+            top: 7px;
+            left: 7px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: white;
+        }
         
         .button {
             text-align: center;
@@ -149,7 +206,6 @@
             margin-bottom: 20px;
         }
 
-        /* Анимации для лучшего UX */
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
@@ -159,7 +215,6 @@
             animation: fadeIn 0.6s ease-out;
         }
 
-        /* Оптимизация для очень маленьких экранов */
         @media (max-width: 480px) {
             .container {
                 padding: 20px 15px;
@@ -168,7 +223,7 @@
             }
 
             .header {
-                padding-top: 60px; /* Чтобы учесть возможное меню браузера */
+                padding-top: 60px;
             }
 
             button {
@@ -177,7 +232,6 @@
             }
         }
 
-        /* Портретная ориентация на мобильных */
         @media (max-height: 600px) and (max-width: 768px) {
             .header {
                 min-height: 600px;
@@ -199,48 +253,112 @@
         <p>ИЗФИР СВФУ г. Якутск, ул. Белинского 58, УЛК</p>
         <p>Очень ждем и будем рады видеть вас на нашем юбилее!</p>
         
-        <input type="text" id="name" class="input" placeholder="ФИО"> 
+        <div class="form-group">
+            <input type="text" id="name" class="input" placeholder="ФИО" required>
+        </div>
         
+        <div class="form-group">
+            <input type="number" id="year" class="input" placeholder="Год выпуска" min="1950" max="2035">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" id="workplace" class="input" placeholder="Место работы">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" id="position" class="input" placeholder="Должность">
+        </div>
+        
+        <div class="radio-group">
+            <!-- <h3>Ваш ответ:</h3> -->
+            <label class="radio-option">
+                <input type="radio" name="response" value="Поздравительная речь">
+                <span class="checkmark"></span>
+                Я выступлю с поздравительной речью
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="response" value="Придет"checked>
+                <span class="checkmark"></span>
+                Я обязательно приду
+            </label>
+            <label class="radio-option">
+                <input type="radio" name="response" value="Не придет">
+                <span class="checkmark"></span>
+                Не смогу присутствовать
+            </label>
+        </div>
         <div class="button">
-            <button id="submit-btn" onclick="sendResponse()">Я приду</button>
+            <button id="submit-btn" onclick="sendResponse()">Отправить</button>
         </div>
         
         <p id="message" class="message"></p>
         
         <script>
             function sendResponse() {
-                const nameInput = document.getElementById("name");
+             const nameInput = document.getElementById("name");
+                const yearInput = document.getElementById("year");
+                const workplaceInput = document.getElementById("workplace");
+                const positionInput = document.getElementById("position");
+                const responseInput = document.querySelector('input[name="response"]:checked');
                 const submitBtn = document.getElementById("submit-btn");
                 const message = document.getElementById("message");
-                const name = document.getElementById("name").value.trim();
-
-                if(name === "") {
+                
+                // Проверка обязательных полей
+                if(nameInput.value.trim() === "") {
                     message.innerText = "Пожалуйста, введите ваше ФИО";
-                    message.style.color = "#e63939";
+                    message.className = "message error";
+                    nameInput.focus();
                     return;
                 }
                 
-                const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfbxygLSuHhdsx0yM0f6OqlDVQX5VZhlxkQGIFZGfeyEYKyGA/formResponse";
-                const FIELD_KEY = "entry.1819273019";
-
+                if(!responseInput) {
+                    message.innerText = "Пожалуйста, выберите вариант ответа";
+                    message.className = "message error";
+                    return;
+                }
+                submitBtn.textContent = responseInput;
+                // Подготовка данных
                 const formData = new FormData();
-                formData.append(FIELD_KEY, name);
-
+                formData.append("entry.53603853", nameInput.value.trim()); // ФИО
+                formData.append("entry.245252222", yearInput.value); // Год выпуска
+                formData.append("entry.1315866284", workplaceInput.value.trim()); // Место работы
+                formData.append("entry.1187317928", positionInput.value.trim()); // Должность
+                formData.append("entry.92992852", responseInput.value); // Вариант ответа
+                
+                // Отправка данных
+                const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf8aqTxsRnbFQkt_9uJJP65zmX9mxuGNL_dJjz7dkPsl8Cncw/formResponse";
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Отправка...";
+                
                 fetch(GOOGLE_FORM_URL, {
                     method: "POST",
                     body: formData,
                     mode: "no-cors" 
                 }).then(() => {
-                    message.innerText = "Спасибо! Ждём вас на юбилее!";
-                    message.style.color = "#2ecc71";
-                    nameInput.value = ""; 
-                    nameInput.disabled = true;
-                    submitBtn.disabled = true;
+                    if(responseInput.value === "Придет" || responseInput.value === "Поздравительная речь") {
+                        message.innerText = "Ждем вас на юбилее!";
+                    } else {
+                        message.innerText = "Спасибо за ответ!";
+                    }
+
+                    message.className = "message success";
+                    
+                    // Очистка формы
                     submitBtn.style.backgroundColor = "#95a5a6";
                     submitBtn.style.cursor = "not-allowed";
+                    nameInput.value = "";
+                    yearInput.value = "";
+                    workplaceInput.value = "";
+                    positionInput.value = "";
+                    document.querySelector('input[name="response"][value="Придет"]').checked = true;
+                    
+                    submitBtn.textContent = "Ответ отправлен";
                 }).catch(() => {
                     message.innerText = "Ошибка при отправке. Пожалуйста, попробуйте еще раз.";
-                    message.style.color = "#e63939";
+                    message.className = "message error";
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Отправить ответ";
                 });
             }
         </script>
