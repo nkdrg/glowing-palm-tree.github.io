@@ -3,281 +3,707 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Юбилей Института зарубежной филологии и регионоведения</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Торжественное приглашение на юбилей кафедры</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #8e1d21;
+            --gold: #c57d56;
+            --cream: #fffaf0;
+            --paper: #f8f4e8;
+            --text: #4a3728;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-        
-        .header {
-            background: linear-gradient(rgba(230, 148, 104, 0.821), rgba(255, 147, 89, 0.821)), 
-                        url('ULK.jpeg') no-repeat center center/cover;
-            text-align: center;
-            min-height: 100vh;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            font-family: 'Noto Serif SC', serif;
+            background-color: var(--primary);
+            color: var(--text);
+            line-height: 1.8;
+            margin: 0;
             padding: 20px;
-            position: relative;
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/rice_paper_v3.png');
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
         }
-        
-        .header h1 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+        .invitation {
+            width: 100%;
             max-width: 900px;
-            line-height: 1.3;
-        }
-        
-        .header h2 {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            font-weight: 400;
-            max-width: 800px;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-            margin-bottom: 2rem;
-        }
-        
-        .container {
-            max-width: 1000px;
-            width: 90%;
-            margin: -50px auto 0;
+            margin: 20px auto;
             padding: 30px;
-            background: white;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            background: linear-gradient(to bottom, rgba(255,250,240,0.96), rgba(248,244,232,0.94));
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            border: 1px solid #e0d0b8;
             position: relative;
+            border-top: 15px solid var(--gold);
             z-index: 1;
+            box-sizing: border-box;
+        }
+        
+        @media (min-width: 768px) {
+            .invitation {
+                padding: 60px 70px;
+                margin: 50px auto;
+            }
+        }
+        
+        .invitation:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--gold), var(--primary));
+        }
+        
+        .gold-border {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 10px solid rgba(216, 183, 16, 0.712);
+            pointer-events: none;
+        }
+        
+        h1 {
+            color: var(--primary);
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 0 0 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0d0b8;
+            font-weight: 700;
+            letter-spacing: 1px;
+            position: relative;
+        }
+        
+        @media (min-width: 768px) {
+            h1 {
+                font-size: 2.4rem;
+                margin: 0 0 40px;
+                padding-bottom: 20px;
+            }
+        }
+        
+        h1:after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
         }
         
         h2 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 600;
-            color: #2c3e50;
-            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 30px 0 20px;
+            font-weight: 400;
+            position: relative;
         }
         
-        p {
-            font-size: clamp(1rem, 2vw, 1.1rem);
-            margin-bottom: 1.5rem;
-            color: #555;
+        @media (min-width: 768px) {
+            h2 {
+                font-size: 1.3rem;
+                margin: 50px 0 30px;
+            }
         }
         
-        .input {
-            width: 100%;
-            max-width: 500px;
-            padding: 15px;
+        h2:before, h2:after {
+            content: "❀";
+            color: var(--gold);
+            margin: 0 10px;
             font-size: 1rem;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            margin: 20px auto;
-            display: block;
-            font-family: 'Montserrat', sans-serif;
-            transition: border 0.3s;
         }
         
-        .input:focus {
-            border-color: #e63939;
-            outline: none;
+        @media (min-width: 768px) {
+            h2:before, h2:after {
+                margin: 0 15px;
+                font-size: 1.2rem;
+            }
         }
+        
+        .content {
+            font-size: 1rem;
+            text-align: center;
+            margin: 30px 0;
+            padding: 0 10px;
+        }
+        
+        @media (min-width: 768px) {
+            .content {
+                font-size: 1.1rem;
+                margin: 40px 0;
+            }
+        }
+        
+        .content p {
+            margin-bottom: 1.5em;
+            text-indent: 0;
+        }
+        
+        .details {
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 50px 0;
+            padding: 25px;
+            background: rgba(232, 216, 200, 0.1);
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .details:before, .details:after {
+            content: "✧";
+            position: absolute;
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        
+        .details:before {
+            left: 10px;
+            top: 10px;
+        }
+        
+        .details:after {
+            right: 10px;
+            bottom: 10px;
+        }
+        
+        .watermark {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            font-size: 1.5rem;
+            color: rgba(142, 29, 33, 0.15);
+            writing-mode: vertical-rl;
+            letter-spacing: 3px;
+        }
+        
+        .corner {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238e1d21" d="M0,0 L100,0 L100,20 Q80,20 80,40 Q80,60 60,60 Q60,80 40,80 Q40,100 0,100 Z" opacity="0.1"/></svg>');
+            background-size: contain;
+        }
+        
+        .corner-tl { top: 0; left: 0; }
+        .corner-tr { top: 0; right: 0; transform: rotate(0deg) scaleX(-1);}
+        .corner-bl { bottom: 0; left: 0; transform: rotate(180deg) scaleX(-1); }
+        .corner-br { bottom: 0; right: 0; transform: rotate(180deg); }
+
+        .side {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 500px; 
+        z-index: 10;
+         }
+
+        .left {
+        left: 0;
+        transform: translateY(-50%) scaleX(-1);
+        }
+        .right {
+        right: 0;
+        }
+
+        .program-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            font-size: 1.1rem;
+        }
+        
+        .program-table th {
+            background-color: rgba(142, 29, 33, 0.1);
+            color: var(--primary);
+            padding: 12px;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+        }
+        
+        .program-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0d0b8;
+            text-align: center; 
+        }
+        
+        .program-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .program-table tr:hover {
+            background-color: rgba(232, 216, 200, 0.1);
+        }
+        
+        .time-column {
+            width: 25%;
+            font-weight: 500;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .event-column {
+            width: 75%;
+        }
+
         .radio-group {
-            margin: 20px 0;
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
-        
+
         .radio-option {
-            display: block;
-            margin: 15px 0;
+            display: flex;
+            align-items: center;
             position: relative;
             padding-left: 35px;
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.1rem;
         }
-        
+
         .radio-option input {
             position: absolute;
             opacity: 0;
             cursor: pointer;
         }
-        
+
         .checkmark {
             position: absolute;
-            top: 0;
             left: 0;
-            height: 25px;
-            width: 25px;
-            background-color: #eee;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid var(--gold);
             border-radius: 50%;
-            border: 2px solid #ddd;
         }
-        
+
         .radio-option:hover input ~ .checkmark {
-            background-color: #f5f5f5;
+            background-color: rgba(197, 125, 86, 0.1);
         }
-        
+
         .radio-option input:checked ~ .checkmark {
-            background-color: #e63939;
-            border-color: #e63939;
+            background-color: var(--gold);
         }
-        
+
         .checkmark:after {
             content: "";
             position: absolute;
             display: none;
         }
-        
+
         .radio-option input:checked ~ .checkmark:after {
             display: block;
         }
-        
+
         .radio-option .checkmark:after {
-            top: 7px;
-            left: 7px;
-            width: 9px;
-            height: 9px;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
             background: white;
         }
-        
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e0d0b8;
+            background-color: rgba(255, 255, 255, 0.8);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 1.1rem;
+            color: var(--text);
+            box-sizing: border-box;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 5px rgba(197, 125, 86, 0.5);
+        }
+
         .button {
             text-align: center;
             margin: 30px 0;
         }
-        
-        button {
-            background-color: #e63939;
+
+        #submit-btn {
+            background-color: var(--gold);
             color: white;
             border: none;
-            padding: 15px 40px;
+            padding: 12px 30px;
             font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 5px;
+            font-family: 'Noto Serif SC', serif;
             cursor: pointer;
-            transition: all 0.3s;
-            font-family: 'Montserrat', sans-serif;
-            width: 100%;
-            max-width: 300px;
+            transition: background-color 0.3s;
         }
-        
-        button:hover {
-            background-color: #c1121f;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(230, 57, 57, 0.4);
+
+        #submit-btn:hover {
+            background-color: #b36a48;
         }
-        
+
         .message {
             text-align: center;
-            font-size: 1.1rem;
             margin: 20px 0;
-            color: #e63939;
-            font-weight: 500;
-            min-height: 24px;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 1.1rem;
         }
-        
-        .contact {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 20px;
+
+        .message.error {
+            background-color: rgba(142, 29, 33, 0.1);
+            color: var(--primary);
+        }
+
+        .message.success {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #2e7d32;
+        }
+
+        .checkbox-group {
+            margin: 20px 0;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 35px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .checkbox-option input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .checkmark {
+            position: absolute;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid var(--gold);
+        }
+
+        .checkbox-option:hover input ~ .checkmark {
+            background-color: rgba(197, 125, 86, 0.1);
+        }
+
+        .checkbox-option input:checked ~ .checkmark {
+            background-color: var(--gold);
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .checkbox-option input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+        .checkbox-option .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        .hidden-section {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: rgba(232, 216, 200, 0.1);
+            border-left: 3px solid var(--gold);
+        }
+           
+        .date-address-block {
+            display: flex;
+            align-items: flex-start; 
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--primary);
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .icon-container {
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-item img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .separator {
+            width: 2px;
+            height: 100px;
+            background-color: var(--primary);
+            opacity: 0.3;
+            margin-top: 0;
+        }
+
+        .date-text {
+            margin-top: 15px; 
+        }
+
+        .info-item span {
             text-align: center;
-            margin-top: 50px;
-        }
-        
-        .contact p {
-            color: white;
-            margin-bottom: 10px;
-        }
-        
-        .contact p:first-child {
-            font-size: 1.3rem;
-            font-weight: 500;
-            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin: 0 auto 30px;
+            max-width: 90%;
+            flex-wrap: wrap;
         }
 
-        .container {
-            animation: fadeIn 0.6s ease-out;
+        .logo-image {
+            height: 150px;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+        /* * {box-sizing:border-box} */
+
+        .slideshow-container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+            margin: 30px auto;
+        }
+
+        .mySlides {
+            position: relative;
+            display: none;
+            width: 100%;
+            text-align: center;
+        }
+
+        .mySlides img {
+            max-width: 100%;
+            height: auto;
+            padding: 8px;
+            background: var(--paper);
+            border: 1px solid rgba(142, 29, 33, 0.3);
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+
+        .mySlides::before,
+        .mySlides::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .mySlides::before {
+            top: 0;
+            left: 0;
+            border-top: 2px solid var(--gold);
+            border-left: 2px solid var(--gold);
+        }
+
+        .mySlides::after {
+            bottom: 0;
+            right: 0;
+            border-bottom: 2px solid var(--gold);
+            border-right: 2px solid var(--gold);
         }
 
         @media (max-width: 480px) {
-            .container {
-                padding: 20px 15px;
-                margin: -30px auto 0;
-                width: 95%;
-            }
-
-            .header {
-                padding-top: 60px;
-            }
-
-            button {
-                padding: 12px 25px;
-                font-size: 1rem;
+            .mySlides::before,
+            .mySlides::after {
+                width: 20px;
+                height: 20px;
             }
         }
 
-        @media (max-height: 600px) and (max-width: 768px) {
-            .header {
-                min-height: 600px;
-            }
+        /* Навигация слайдера */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 12px;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
         }
-    </style>
+
+        .next {
+            right: 10px;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(142, 29, 33, 0.8);
+            color: white;
+        }
+
+        /* Анимация */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1s;
+        }
+
+        @keyframes fade {
+            from {opacity: .6}
+            to {opacity: 1}
+        }
+
+        .centered-text {
+            text-align: center;
+            margin: 1em auto;
+            max-width: 80%;
+            line-height: 1.6;
+        }
+        </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Юбилей Института зарубежной филологии и регионоведения</h1>
-        <h2>Приглашаем всех на празднование юбилея. Вас ждёт насыщенная программа, интересные лекции и встречи с коллегами.</h2>
-    </div>
-    
-    <div class="container">
-        <h2>Дата</h2>
-        <p>8 апреля 2025 г.</p>
+    <img src="branch5.svg" class="side left">
+    <img src="branch5.svg" class="side right">
+    <div class="invitation">
+        <div class="gold-border"></div>
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+
+        <span class="watermark">東方言語文化</span>
+        <div class="logos-container">
+            <img src="logo1.png" alt="Логотип 1" class="logo-image">
+        </div>
+
+        <h1>Приглашение</h1>
         
-        <h2>Место проведения</h2>
-        <p>ИЗФИР СВФУ г. Якутск, ул. Белинского 58, УЛК</p>
-        <p>Очень ждем и будем рады видеть вас на нашем юбилее!</p>
-        
-        <div class="form-group">
-            <input type="text" id="name" class="input" placeholder="ФИО" required>
+        <div class="content">
+            <p>Кафедра «Восточные языки и страноведение» ИЗФиР СВФУ приглашает Вас на торжественное заседание, посвященное 25-летию создания кафедры.</p>
+        </div>
+
+        <div class="date-address-block">
+            <div class="info-item">
+                <div class="icon-container">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238e1d21'><path d='M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V9h14v10zM5 7V5h14v2H5zm2 4h10v2H7zm0 4h7v2H7z'/></svg>" alt="Календарь">
+                </div>
+                <span class="date-text">24 апреля 2025</span>
+            </div>
+            <div class="separator"></div>
+            <div class="info-item">
+                <div class="icon-container">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%238e1d21'><path d='M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z'/></svg>" alt="Место">
+                </div>
+                <span>ул. Белинского, 58<br>Зал Ученого Совета УЛК</span>
+            </div>
         </div>
         
-        <div class="form-group">
-            <input type="number" id="year" class="input" placeholder="Год выпуска" min="1950" max="2035">
-        </div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="img1.jpg" style="width:100%">
+            </div>
         
-        <div class="form-group">
-            <input type="text" id="workplace" class="input" placeholder="Место работы">
-        </div>
+            <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="img2.jpg" style="width:100%">
+            </div>
         
-        <div class="form-group">
-            <input type="text" id="position" class="input" placeholder="Должность">
+            <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="img3.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="img4.jpg" style="width:100%">
+            </div>
+        
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+        <br>
+        
+        <h2>ПРОГРАММА МЕРОПРИЯТИЯ</h2>
+                    
+        <table class="program-table">
+            <thead>
+                <tr>
+                    <th>Время</th>
+                    <th>Мероприятие</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time-column">15:00</td>
+                    <td class="event-column">Сбор гостей, фотографирование, мастер-классы, фуршет</td>
+                </tr>
+                <tr>
+                    <td class="time-column">16:00</td>
+                    <td class="event-column">Торжественное заседание: поздравление гостей, выпускников</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Просьба подтвердить Ваше участие до 11 апреля 2025г.</h2>
         
         <div class="radio-group">
-            <!-- <h3>Ваш ответ:</h3> -->
             <label class="radio-option">
-                <input type="radio" name="response" value="Поздравительная речь">
+                <input type="radio" name="response" value="Выступает">
                 <span class="checkmark"></span>
                 Я выступлю с поздравительной речью
             </label>
             <label class="radio-option">
-                <input type="radio" name="response" value="Придет"checked>
+                <input type="radio" name="response" value="Придет" checked>
                 <span class="checkmark"></span>
                 Я обязательно приду
             </label>
@@ -287,23 +713,97 @@
                 Не смогу присутствовать
             </label>
         </div>
+
+        <div class="form-group">
+            <input type="text" id="name" class="input" placeholder="ФИО" required>
+        </div>
+        
+        <div class="form-group">
+            <input type="text" id="workplace" class="input" placeholder="Место работы">
+        </div>
+        
+        <div class="form-group">
+            <input type="text" id="phoneNumber" class="input" placeholder="Номер телефона">
+        </div>
+        
+        <div class="checkbox-group">
+            <label class="checkbox-option">
+                <input type="checkbox" id="graduate-checkbox">
+                <span class="checkmark"></span>
+                Я выпускник
+            </label>
+            
+            <div id="afterparty-section" class="hidden-section">
+                <div class="form-group">
+                    <input type="number" id="year" class="input" placeholder="Год выпуска" min="1950" max="2035">
+                </div>
+                <p class="centered-text">
+                    Приглашаем присоединиться к встрече выпускников кафедры восточных языков и страноведения разных лет, ориентировочно в Урдэл парке или ресторане (в зависимости от количества выпускников). Стоимость участия в праздничном ужине с развлекательной программой 4000р. с персоны. Просим произвести оплату до 14 апреля 2025 по номеру телефона 89241775701 (СБЕРБАНК Анна Андреевна В.).
+                </p>
+                <label class="checkbox-option">
+                    <input type="checkbox" id="afterparty-checkbox" placeholder="Я приду">
+                    <span class="checkmark"></span>
+                    Я приду
+                </label>
+            </div>
+        </div>
         <div class="button">
             <button id="submit-btn" onclick="sendResponse()">Отправить</button>
         </div>
-        
+
         <p id="message" class="message"></p>
-        
+
         <script>
+            document.getElementById('graduate-checkbox').addEventListener('change', function() {
+                const afterpartySection = document.getElementById('afterparty-section');
+                if(this.checked) {
+                    afterpartySection.style.display = 'block';
+                } else {
+                    afterpartySection.style.display = 'none';
+                    document.getElementById('afterparty-checkbox').checked = false;
+                }
+            });
+
+            
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            }
+
             function sendResponse() {
-             const nameInput = document.getElementById("name");
+                const nameInput = document.getElementById("name");
                 const yearInput = document.getElementById("year");
                 const workplaceInput = document.getElementById("workplace");
-                const positionInput = document.getElementById("position");
+                const numberInput = document.getElementById("phoneNumber");
                 const responseInput = document.querySelector('input[name="response"]:checked');
                 const submitBtn = document.getElementById("submit-btn");
                 const message = document.getElementById("message");
+                const afterpartyCheckbox = document.getElementById('afterparty-checkbox');
+                const isChecked = afterpartyCheckbox.checked ? "Придет" : "Нет";
+                const graduateCheckbox = document.getElementById('graduate-checkbox');
                 
-                // Проверка обязательных полей
                 if(nameInput.value.trim() === "") {
                     message.innerText = "Пожалуйста, введите ваше ФИО";
                     message.className = "message error";
@@ -316,17 +816,21 @@
                     message.className = "message error";
                     return;
                 }
-                submitBtn.textContent = responseInput;
+                
                 // Подготовка данных
                 const formData = new FormData();
-                formData.append("entry.53603853", nameInput.value.trim()); // ФИО
-                formData.append("entry.245252222", yearInput.value); // Год выпуска
-                formData.append("entry.1315866284", workplaceInput.value.trim()); // Место работы
-                formData.append("entry.1187317928", positionInput.value.trim()); // Должность
-                formData.append("entry.92992852", responseInput.value); // Вариант ответа
+                formData.append("entry.1892414805", nameInput.value.trim()); // ФИО
+                formData.append("entry.682260892", responseInput.value); // Вариант ответа
+                
+                formData.append("entry.1694716746", workplaceInput.value.trim()); // Место работы
+                formData.append("entry.853277562", numberInput.value.trim()); // Номер телефона
+                formData.append("entry.6284194", yearInput.value.trim()); // год выпуска
+
+                formData.append("entry.1909468350", isChecked);//афтепати
+
                 
                 // Отправка данных
-                const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf8aqTxsRnbFQkt_9uJJP65zmX9mxuGNL_dJjz7dkPsl8Cncw/formResponse";
+                const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSds_jDIbHS-fSkPUg-Hsos8rzuUqYJ45cn828TRoLlOVa6Feg/formResponse";
                 
                 submitBtn.disabled = true;
                 submitBtn.textContent = "Отправка...";
@@ -336,7 +840,7 @@
                     body: formData,
                     mode: "no-cors" 
                 }).then(() => {
-                    if(responseInput.value === "Придет" || responseInput.value === "Поздравительная речь") {
+                    if(responseInput.value === "Придет" || responseInput.value === "Выступает") {
                         message.innerText = "Ждем вас на юбилее!";
                     } else {
                         message.innerText = "Спасибо за ответ!";
@@ -350,8 +854,11 @@
                     nameInput.value = "";
                     yearInput.value = "";
                     workplaceInput.value = "";
-                    positionInput.value = "";
+                    numberInput.value = "";
                     document.querySelector('input[name="response"][value="Придет"]').checked = true;
+                    document.getElementById('afterparty-section').style.display = 'none';
+                    afterpartyCheckbox.checked = false;
+                    graduateCheckbox.checked = false;
                     
                     submitBtn.textContent = "Ответ отправлен";
                 }).catch(() => {
@@ -362,12 +869,6 @@
                 });
             }
         </script>
-    </div>
-    
-    <div class="contact">
-        <p>Свяжитесь с нами по всем вопросам:</p>
-        <p>Деканат: <a href="tel:+74112496881" style="color: #fff;">8 (4112) 49-68-81</a></p>
-        <p>Email: <a href="mailto:izfir-pk@s-vfu.ru" style="color: #fff;">izfir-pk@s-vfu.ru</a></p>
     </div>
 </body>
 </html>
