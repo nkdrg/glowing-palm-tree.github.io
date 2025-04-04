@@ -7,7 +7,13 @@
     <style>
         /* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); */
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+        @font-face {
+        font-family: 'MyCustomFont';  /* Ваше название шрифта */
+        src: 
+            url('Larisascript.woff2') format('woff2');
+        font-weight: 400;  /* Обычное начертание (400 = normal) */
+        font-style: normal;  /* Не курсив */
+        }
         :root {
             --primary: #8e1d21;
             --gold: #c57d56;
@@ -31,12 +37,6 @@
             min-height: 100vh;
             box-sizing: border-box;
         }
-        .great-vibes-regular {
-            font-family: "Great Vibes", cursive;
-            font-weight: 400;
-            font-style: normal;
-            text-transform: capitalize;
-            }
 
         .invitation {
             width: 100%;
@@ -80,7 +80,7 @@
         }
         
         h1 {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'MyCustomFont', cursive;
             color: var(--pink);
             text-align: center;
             margin: 0 0 30px;
@@ -134,7 +134,7 @@
         }
         
         .content {
-            font-family: 'Great Vibes', cursive;
+            font-family: 'MyCustomFont', cursive;
             text-align: center;
             padding: 0 10px;
         }
@@ -788,7 +788,7 @@
         <h1>Приглашение</h1>
         
         <div class="content">
-            <p>Кафедра «Восточные языки и страноведение» <span class="great-vibes-regular">ИЗФиР СВФУ</span>
+            <p>Кафедра «Восточные языки и страноведение» ИЗФиР СВФУ
                 приглашает Вас</p>
             <p>на торжественное заседание,</p>
             <p>посвященное <span style="color: var(--pink);">25-летию </span>создания кафедры</p>
