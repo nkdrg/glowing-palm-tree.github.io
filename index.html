@@ -189,26 +189,12 @@
         }
         
         .corner {
-    position: absolute;
-    width: 150px; /* Десктоп */
-    height: 150px;
-    background-image: url('data:image/svg+xml;utf8,<svg...');
-    background-size: contain;
-}
-
-@media (max-width: 768px) {
-    .corner {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    .corner {
-        width: 70px;
-        height: 70px;
-    }
-}
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%238e1d21" d="M0,0 L100,0 L100,20 Q80,20 80,40 Q80,60 60,60 Q60,80 40,80 Q40,100 0,100 Z" opacity="0.1"/></svg>');
+            background-size: contain;
+        }
         
         .corner-tl { top: 0; left: 0; }
         .corner-tr { top: 0; right: 0; transform: rotate(0deg) scaleX(-1);}
