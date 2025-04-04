@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Торжественное приглашение на юбилей кафедры</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
-        
+        /* @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap'); */
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
         :root {
             --primary: #8e1d21;
             --gold: #c57d56;
             --cream: #fffaf0;
             --paper: #f8f4e8;
             --text: #4a3728;
+            --pink: #f35a70;
         }
         
         body {
-            font-family: 'Noto Serif SC', serif;
+            font-family: 'Montserrat Alternates', serif;
             background-color: var(--primary);
             color: var(--text);
             line-height: 1.8;
@@ -29,6 +31,12 @@
             min-height: 100vh;
             box-sizing: border-box;
         }
+        .great-vibes-regular {
+            font-family: "Great Vibes", cursive;
+            font-weight: 400;
+            font-style: normal;
+            text-transform: capitalize;
+            }
 
         .invitation {
             width: 100%;
@@ -72,20 +80,19 @@
         }
         
         h1 {
-            color: var(--primary);
+            font-family: 'Great Vibes', cursive;
+            color: var(--pink);
             text-align: center;
-            font-size: 1.8rem;
             margin: 0 0 30px;
             padding-bottom: 15px;
             border-bottom: 1px solid #e0d0b8;
-            font-weight: 700;
             letter-spacing: 1px;
             position: relative;
         }
         
         @media (min-width: 768px) {
             h1 {
-                font-size: 2.4rem;
+                font-size: 3rem;
                 margin: 0 0 40px;
                 padding-bottom: 20px;
             }
@@ -99,11 +106,11 @@
             transform: translateX(-50%);
             width: 100px;
             height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            background: linear-gradient(90deg, transparent, var(--pink), transparent);
         }
         
         h2 {
-            color: var(--primary);
+            color: var(--pink);
             text-align: center;
             font-size: 1.1rem;
             margin: 30px 0 20px;
@@ -133,7 +140,7 @@
         }
         
         .content {
-            font-size: 1rem;
+            font-family: 'Great Vibes', cursive;
             text-align: center;
             margin: 30px 0;
             padding: 0 10px;
@@ -141,7 +148,7 @@
         
         @media (min-width: 768px) {
             .content {
-                font-size: 1.1rem;
+                font-size: 1.8rem;
                 margin: 40px 0;
             }
         }
@@ -206,7 +213,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-80%);
-            width: 500px;
+            width: 400px;
             z-index: 10;
             transition: width 0.3s ease;
         }
@@ -242,7 +249,7 @@
         
         .program-table th {
             background-color: rgba(142, 29, 33, 0.1);
-            color: var(--primary);
+            color: var(--text);
             padding: 12px;
             text-align: center;
             border-bottom: 2px solid var(--gold);
@@ -265,7 +272,7 @@
         .time-column {
             width: 25%;
             font-weight: 500;
-            color: var(--primary);
+            color: var(--text);
             position: relative;
         }
         
@@ -361,7 +368,7 @@
             padding: 12px;
             border: 1px solid #e0d0b8;
             background-color: rgba(255, 255, 255, 0.8);
-            font-family: 'Noto Serif SC', serif;
+            font-family: 'Montserrat Alternates', serif;
             font-size: 1.1rem;
             color: var(--text);
             box-sizing: border-box;
@@ -392,7 +399,7 @@
             border: none;
             padding: 12px 30px;
             font-size: 1.1rem;
-            font-family: 'Noto Serif SC', serif;
+            font-family: 'Montserrat Alternates', serif;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -528,7 +535,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            color: var(--primary);
+            color: var(--text);
             font-size: 1.2rem;
             min-width: 200px;
         }
@@ -609,8 +616,7 @@
         .logos-container {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 40px;
+            margin-top: 60px;
             margin: 0 auto 30px;
             max-width: 90%;
             flex-wrap: wrap;
@@ -749,14 +755,14 @@
     </style>
 </head>
 <body>
-    <img src="branch5.svg" class="side left">
-    <img src="branch5.svg" class="side right">
+    <img src="branch2.svg" class="side left">
+    <img src="branch2.svg" class="side right">
     <div class="invitation">
         <div class="gold-border"></div>
-        <div class="corner corner-tl"></div>
+        <!-- <div class="corner corner-tl"></div>
         <div class="corner corner-tr"></div>
         <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
+        <div class="corner corner-br"></div> -->
 
         <span class="watermark">東方言語文化</span>
         <div class="logos-container">
@@ -766,7 +772,10 @@
         <h1>Приглашение</h1>
         
         <div class="content">
-            <p>Кафедра «Восточные языки и страноведение» ИЗФиР СВФУ приглашает Вас на торжественное заседание, посвященное 25-летию создания кафедры.</p>
+            <p>Кафедра «Восточные языки и страноведение» <span class="great-vibes-regular">Изфир Свфу</span>
+                приглашает Вас</p>
+            <p>на торжественное заседание,</p>
+            <p>посвященное <span style="color: var(--pink);">25-летию создания кафедры</span></p>
         </div>
 
         <div class="date-address-block">
